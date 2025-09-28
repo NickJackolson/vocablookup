@@ -4,5 +4,7 @@ URL="https://www.vocabulary.com/dictionary"
 DICT_PATH="$HOME/.config/vocablookup/dict"
 
 word=$(cat $DICT_PATH | rofi -dmenu -e "Vocabulary search")
-xdg-open $URL/$word
+if [[ -n $word ]]; then
+	xdg-open $URL/$word
+fi
 
